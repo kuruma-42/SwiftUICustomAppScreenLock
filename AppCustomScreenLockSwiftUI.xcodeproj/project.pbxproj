@@ -14,6 +14,10 @@
 		0277BE992791203600E37BA4 /* AppCustomScreenLockSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277BE982791203600E37BA4 /* AppCustomScreenLockSwiftUITests.swift */; };
 		0277BEA32791203600E37BA4 /* AppCustomScreenLockSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277BEA22791203600E37BA4 /* AppCustomScreenLockSwiftUIUITests.swift */; };
 		0277BEA52791203600E37BA4 /* AppCustomScreenLockSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277BEA42791203600E37BA4 /* AppCustomScreenLockSwiftUIUITestsLaunchTests.swift */; };
+		0277BEB32791310A00E37BA4 /* AppScreenLockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277BEB22791310900E37BA4 /* AppScreenLockViewModel.swift */; };
+		0277BEB52791317200E37BA4 /* AppScreenLockMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277BEB42791317200E37BA4 /* AppScreenLockMode.swift */; };
+		02B9917527913366000E10C2 /* UserDefaultUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9917427913366000E10C2 /* UserDefaultUtil.swift */; };
+		02B99177279133C9000E10C2 /* AppScreenLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B99176279133C9000E10C2 /* AppScreenLockView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		0277BE9E2791203600E37BA4 /* AppCustomScreenLockSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppCustomScreenLockSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0277BEA22791203600E37BA4 /* AppCustomScreenLockSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCustomScreenLockSwiftUIUITests.swift; sourceTree = "<group>"; };
 		0277BEA42791203600E37BA4 /* AppCustomScreenLockSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCustomScreenLockSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0277BEB22791310900E37BA4 /* AppScreenLockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreenLockViewModel.swift; sourceTree = "<group>"; };
+		0277BEB42791317200E37BA4 /* AppScreenLockMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreenLockMode.swift; sourceTree = "<group>"; };
+		02B9917427913366000E10C2 /* UserDefaultUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUtil.swift; sourceTree = "<group>"; };
+		02B99176279133C9000E10C2 /* AppScreenLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreenLockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,8 @@
 			children = (
 				0277BE872791203500E37BA4 /* AppCustomScreenLockSwiftUIApp.swift */,
 				0277BE892791203500E37BA4 /* ContentView.swift */,
+				02B99178279133D5000E10C2 /* AppScreenLock */,
+				02B99179279133EC000E10C2 /* Common */,
 				0277BE8B2791203600E37BA4 /* Assets.xcassets */,
 				0277BE8D2791203600E37BA4 /* Preview Content */,
 			);
@@ -125,6 +135,24 @@
 				0277BEA42791203600E37BA4 /* AppCustomScreenLockSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = AppCustomScreenLockSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		02B99178279133D5000E10C2 /* AppScreenLock */ = {
+			isa = PBXGroup;
+			children = (
+				0277BEB22791310900E37BA4 /* AppScreenLockViewModel.swift */,
+				0277BEB42791317200E37BA4 /* AppScreenLockMode.swift */,
+				02B99176279133C9000E10C2 /* AppScreenLockView.swift */,
+			);
+			path = AppScreenLock;
+			sourceTree = "<group>";
+		};
+		02B99179279133EC000E10C2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				02B9917427913366000E10C2 /* UserDefaultUtil.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0277BE8A2791203500E37BA4 /* ContentView.swift in Sources */,
+				0277BEB52791317200E37BA4 /* AppScreenLockMode.swift in Sources */,
 				0277BE882791203500E37BA4 /* AppCustomScreenLockSwiftUIApp.swift in Sources */,
+				02B99177279133C9000E10C2 /* AppScreenLockView.swift in Sources */,
+				02B9917527913366000E10C2 /* UserDefaultUtil.swift in Sources */,
+				0277BEB32791310A00E37BA4 /* AppScreenLockViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
