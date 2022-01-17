@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		026946E327953AEA001B02B2 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026946E227953AEA001B02B2 /* StateManager.swift */; };
 		0277BE882791203500E37BA4 /* AppCustomScreenLockSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277BE872791203500E37BA4 /* AppCustomScreenLockSwiftUIApp.swift */; };
 		0277BE8A2791203500E37BA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277BE892791203500E37BA4 /* ContentView.swift */; };
 		0277BE8C2791203600E37BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0277BE8B2791203600E37BA4 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		026946E227953AEA001B02B2 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
 		0277BE842791203500E37BA4 /* AppCustomScreenLockSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCustomScreenLockSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0277BE872791203500E37BA4 /* AppCustomScreenLockSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCustomScreenLockSwiftUIApp.swift; sourceTree = "<group>"; };
 		0277BE892791203500E37BA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				02B9917427913366000E10C2 /* UserDefaultUtil.swift */,
+				026946E227953AEA001B02B2 /* StateManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				0277BE8A2791203500E37BA4 /* ContentView.swift in Sources */,
 				0277BEB52791317200E37BA4 /* AppScreenLockMode.swift in Sources */,
 				0277BE882791203500E37BA4 /* AppCustomScreenLockSwiftUIApp.swift in Sources */,
+				026946E327953AEA001B02B2 /* StateManager.swift in Sources */,
 				02B99177279133C9000E10C2 /* AppScreenLockView.swift in Sources */,
 				02B9917527913366000E10C2 /* UserDefaultUtil.swift in Sources */,
 				0277BEB32791310A00E37BA4 /* AppScreenLockViewModel.swift in Sources */,

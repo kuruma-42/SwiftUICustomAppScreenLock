@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var stateManager : StateManager
     @StateObject var appScreenLockModel : AppScreenLockViewModel = AppScreenLockViewModel()
     var body: some View {
 
@@ -17,7 +18,7 @@ struct ContentView: View {
                 AppScreenLockView().environmentObject(appScreenLockModel)
             } else {
                 VStack{
-                    Text("화면잠금 테스트 ")
+                    Text("화면잠금 테스트")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
                 .ignoresSafeArea()

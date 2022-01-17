@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct AppCustomScreenLockSwiftUIApp: App {
+    @StateObject var stateManager = StateManager()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(stateManager)
         }
     }
 }
