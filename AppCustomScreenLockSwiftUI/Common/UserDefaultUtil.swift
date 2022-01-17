@@ -7,7 +7,7 @@
 import Foundation
 
 
-func setUD(key: String, value: Int) {
+func setUD(key: String, value: [Int]) {
     print("UserDefaults set key[\(key)] value[\(value)]")
     UserDefaults.standard.set(value, forKey: key)
 }

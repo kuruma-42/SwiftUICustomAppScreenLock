@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		026946E327953AEA001B02B2 /* StateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026946E227953AEA001B02B2 /* StateManager.swift */; };
+		026946E627953DC2001B02B2 /* PasswordFindByEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026946E527953DC2001B02B2 /* PasswordFindByEmailView.swift */; };
+		026946E827953FE5001B02B2 /* PasswordSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026946E727953FE5001B02B2 /* PasswordSettingView.swift */; };
+		026946EA27954400001B02B2 /* PasswordSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026946E927954400001B02B2 /* PasswordSettingViewModel.swift */; };
 		0277BE882791203500E37BA4 /* AppCustomScreenLockSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277BE872791203500E37BA4 /* AppCustomScreenLockSwiftUIApp.swift */; };
 		0277BE8A2791203500E37BA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0277BE892791203500E37BA4 /* ContentView.swift */; };
 		0277BE8C2791203600E37BA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0277BE8B2791203600E37BA4 /* Assets.xcassets */; };
@@ -40,6 +43,9 @@
 
 /* Begin PBXFileReference section */
 		026946E227953AEA001B02B2 /* StateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateManager.swift; sourceTree = "<group>"; };
+		026946E527953DC2001B02B2 /* PasswordFindByEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordFindByEmailView.swift; sourceTree = "<group>"; };
+		026946E727953FE5001B02B2 /* PasswordSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSettingView.swift; sourceTree = "<group>"; };
+		026946E927954400001B02B2 /* PasswordSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSettingViewModel.swift; sourceTree = "<group>"; };
 		0277BE842791203500E37BA4 /* AppCustomScreenLockSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppCustomScreenLockSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0277BE872791203500E37BA4 /* AppCustomScreenLockSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCustomScreenLockSwiftUIApp.swift; sourceTree = "<group>"; };
 		0277BE892791203500E37BA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +87,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		026946E427953D92001B02B2 /* PasswordSetting */ = {
+			isa = PBXGroup;
+			children = (
+				026946E527953DC2001B02B2 /* PasswordFindByEmailView.swift */,
+				026946E727953FE5001B02B2 /* PasswordSettingView.swift */,
+				026946E927954400001B02B2 /* PasswordSettingViewModel.swift */,
+			);
+			path = PasswordSetting;
+			sourceTree = "<group>";
+		};
 		0277BE7B2791203500E37BA4 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +120,7 @@
 		0277BE862791203500E37BA4 /* AppCustomScreenLockSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				026946E427953D92001B02B2 /* PasswordSetting */,
 				0277BE872791203500E37BA4 /* AppCustomScreenLockSwiftUIApp.swift */,
 				0277BE892791203500E37BA4 /* ContentView.swift */,
 				02B99178279133D5000E10C2 /* AppScreenLock */,
@@ -288,10 +305,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026946E827953FE5001B02B2 /* PasswordSettingView.swift in Sources */,
 				0277BE8A2791203500E37BA4 /* ContentView.swift in Sources */,
 				0277BEB52791317200E37BA4 /* AppScreenLockMode.swift in Sources */,
+				026946E627953DC2001B02B2 /* PasswordFindByEmailView.swift in Sources */,
 				0277BE882791203500E37BA4 /* AppCustomScreenLockSwiftUIApp.swift in Sources */,
 				026946E327953AEA001B02B2 /* StateManager.swift in Sources */,
+				026946EA27954400001B02B2 /* PasswordSettingViewModel.swift in Sources */,
 				02B99177279133C9000E10C2 /* AppScreenLockView.swift in Sources */,
 				02B9917527913366000E10C2 /* UserDefaultUtil.swift in Sources */,
 				0277BEB32791310A00E37BA4 /* AppScreenLockViewModel.swift in Sources */,

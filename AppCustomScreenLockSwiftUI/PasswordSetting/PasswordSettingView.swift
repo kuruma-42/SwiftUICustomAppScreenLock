@@ -1,23 +1,17 @@
 //
-//  AppScreenLockView.swift
+//  PasswordSettingView.swift
 //  AppCustomScreenLockSwiftUI
 //
-//  Created by Yong Jun Cha on 2022/01/14.
+//  Created by Yong Jun Cha on 2022/01/17.
 //
 
 import SwiftUI
+import Combine
 
-struct AppScreenLockView: View {
-    @EnvironmentObject var appScreenLockModel : AppScreenLockViewModel
+struct PasswordSettingView: View {
     @EnvironmentObject var stateManager : StateManager
-    private var placeHolder : String = "비밀번호를 입력해주세요"
-    @State var textfiledText : String = ""
-    
-    
-    var columns: [GridItem] =
-    Array(repeating: .init(.flexible()), count: 3)
-    
-    
+    @StateObject var passwordSettingViewModel = PasswordSettingViewModel()
+    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)
     var body: some View {
         VStack{
             ZStack{
@@ -26,7 +20,7 @@ struct AppScreenLockView: View {
                     .frame(height: 80)
                     .padding(.bottom)
                 
-                Text("화면잠금")
+                Text("비밀번호 설정")
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                     .font(.system(size: 18, weight: .bold, design: .serif))
@@ -36,46 +30,33 @@ struct AppScreenLockView: View {
             Spacer()
             
             Group {
-                Image(systemName: "lock.fill")
+                Image(systemName: "lock.circle.fill")
                     .resizable()
-                    .frame(width: 55, height: 70, alignment: .center)
+                    .frame(width: 70, height: 70, alignment: .center)
                     .padding(.bottom, 18)
+                    .foregroundColor(Color.black)
                 
-                Text("잠금 해제")
+                Text("비밀번호 설정")
                     .font(.system(size: 24, weight: .bold, design: .serif))
                     .padding(.bottom, 78)
+                    .foregroundColor(Color.black)
             }
             
             HStack(spacing: 40){
                 Group {
                     Circle()
-                        .foregroundColor(appScreenLockModel.passwordFieldArray.count >= 1 ? Color.pink : Color.black)
+                        .foregroundColor(passwordSettingViewModel.passwordFieldArray.count >= 1 ? Color.pink : Color.black)
                     Circle()
-                        .foregroundColor(appScreenLockModel.passwordFieldArray.count >= 2 ? Color.pink : Color.black)
+                        .foregroundColor(passwordSettingViewModel.passwordFieldArray.count >= 2 ? Color.pink : Color.black)
                     Circle()
-                        .foregroundColor(appScreenLockModel.passwordFieldArray.count >= 3 ? Color.pink : Color.black)
+                        .foregroundColor(passwordSettingViewModel.passwordFieldArray.count >= 3 ? Color.pink : Color.black)
                     Circle()
-                        .foregroundColor(appScreenLockModel.passwordFieldArray.count >= 4 ? Color.pink : Color.black)
+                        .foregroundColor(passwordSettingViewModel.passwordFieldArray.count >= 4 ? Color.pink : Color.black)
                 }
                 .frame(width: 12, height: 12, alignment: .center)
+                
             }
             .padding(.bottom, 25)
-            .offset(x: appScreenLockModel.isWrongPassword ? -10 : 0)
-            .animation(appScreenLockModel.isWrongPassword ?  Animation.default.repeatCount(3).speed(6) : .none)
-            
-            Text("비밀번호를 잊어버렸어요")
-                .font(.system(size: 14, weight: .regular, design: .serif))
-                .underline()
-                .padding(.bottom, 79)
-                .foregroundColor(Color.gray)
-                .contentShape(Rectangle())
-                .onTapGesture(perform: {
-                    stateManager.isForgetPasswordState.toggle()
-                })
-                .sheet(isPresented: $stateManager.isForgetPasswordState) {
-                    PasswordFindByEmailView()
-                }
-            
             
             Spacer()
             
@@ -84,8 +65,7 @@ struct AppScreenLockView: View {
                     if numberpadNumber != 10 && numberpadNumber != 11 && numberpadNumber != 12 {
                         Button {
                             DispatchQueue.main.async {
-                                appScreenLockModel.passwordFieldArray.append(numberpadNumber)
-                                print("\(appScreenLockModel.passwordFieldArray)")
+                                passwordSettingViewModel.passwordFieldArray.append(numberpadNumber)
                             }
                         } label: {
                             Text("\(numberpadNumber)")
@@ -99,7 +79,7 @@ struct AppScreenLockView: View {
                         
                         Button {
                             DispatchQueue.main.async {
-                                appScreenLockModel.resetPasswordArray()
+                                passwordSettingViewModel.resetPasswordArray()
                             }
                         } label: {
                             Image(systemName: "arrow.clockwise")
@@ -109,7 +89,7 @@ struct AppScreenLockView: View {
                         
                     } else if numberpadNumber == 11 {
                         Button{
-                            appScreenLockModel.passwordFieldArray.append(0)
+                            passwordSettingViewModel.passwordFieldArray.append(0)
                         } label: {
                             Text("0")
                                 .contentShape(Rectangle())
@@ -120,7 +100,7 @@ struct AppScreenLockView: View {
                     } else if numberpadNumber == 12 {
                         Button {
                             DispatchQueue.main.async {
-                                appScreenLockModel.deleteLastIndexPasswordArray()
+                                passwordSettingViewModel.deleteLastIndexPasswordArray()
                             }
                         } label: {
                             Image(systemName: "delete.left.fill")
@@ -139,13 +119,18 @@ struct AppScreenLockView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .ignoresSafeArea()
         .onAppear {
-            appScreenLockModel.setObserver()
+            passwordSettingViewModel.setObserver()
+        }
+        .onChange(of: passwordSettingViewModel.isPasswordRegisterFinish) { newValue in
+            if newValue {
+                stateManager.isPasswordSettingView.toggle()
+            }
         }
     }
 }
 
-struct AppScreenLockView_Previews: PreviewProvider {
+struct PasswordSettingView_Previews: PreviewProvider {
     static var previews: some View {
-        AppScreenLockView().environmentObject(AppScreenLockViewModel())
+        PasswordSettingView()
     }
 }
