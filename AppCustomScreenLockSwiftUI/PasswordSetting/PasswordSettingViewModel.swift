@@ -26,27 +26,27 @@ class PasswordSettingViewModel : ObservableObject {
     }
     
     func setObserver() {
-        let subscriber = $passwordFieldArray
+        $passwordFieldArray
             .removeDuplicates()
             .subscribe(on: DispatchQueue.main)
-            .sink { value in
+            .sink { [weak self] value in
                 if value.count == 4 {
                     print("PASSWORD REGISTER")
-                    setUD(key: self.APP_SCREEN_LOCK_PASSWORD, value: value)
+                    setUD(key: self?.APP_SCREEN_LOCK_PASSWORD ?? "", value: value)
                     
-                    DispatchQueue.main.async { [self] in
-                        self.resetPasswordArray()
-                        isPasswordRegisterFinish = true
+                    DispatchQueue.main.async { [weak self] in
+                        self?.resetPasswordArray()
+                        self?.isPasswordRegisterFinish = true
                         print("PASSWORD FINISH")
                     }
                 }
                 else if value.count > 4 {
                     print("OVER PASSWORD DELETE")
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [weak self] in
                         let prefixedPassword = value.prefix(4)
-                        self.passwordFieldArray = Array(prefixedPassword)
+                        self?.passwordFieldArray = Array(prefixedPassword)
                     }
-                    print("\(self.passwordFieldArray)")
+                    print("\(self?.passwordFieldArray)")
                 }
             }
             .store(in: &subscription)
